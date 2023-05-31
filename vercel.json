@@ -1,15 +1,23 @@
 {
-    "builds": [
-      {
-        "src": "Binarybrain/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "Binarybrain/wsgi.py"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "Binarybrain/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Binarybrain/wsgi.py"
+    }
+  ],
+  "env": {
+    "VERCEL_PYTHON_VERSION": "3.9",
+    "VERCEL_STATIC_BASE_URL": "/static"
   }
-  
+}
