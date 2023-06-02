@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-8+fa%7&#@5ic1@21ghtd8&k2e-#q4%kvo)94lzwz*di+w@gk=c
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '64.227.138.46', 'pradeep-kurapati.co', 'www.pradeep-kurapati.co']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
@@ -98,3 +98,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Add this line
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CSRF Settings
+CSRF_COOKIE_SECURE = False  # Set it to True if using HTTPS in production
+CSRF_COOKIE_SAMESITE = 'Lax'  # Adjust it based on your requirements

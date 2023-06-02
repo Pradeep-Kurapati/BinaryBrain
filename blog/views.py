@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render
 from blog.models import Blog, Contact
 
 # Create your views here.
@@ -25,4 +25,5 @@ def contact(request):
         desc = request.POST.get("desc")
         instance = Contact(name=name,email=email,desc=desc)
         instance.save()
+        return redirect("home")
     return render(request, "contact.html")
